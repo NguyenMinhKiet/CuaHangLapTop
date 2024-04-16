@@ -11,7 +11,7 @@ function getSoNhanVien(){
             }
         }
     };
-    xhr.open("GET", "../../layout/xuly/admin-xuly/nhanviencount.php", true);
+    xhr.open("GET", "../../xuly/admin/nhanviencount.php", true);
     xhr.send();
 }
 getSoNhanVien();
@@ -29,7 +29,7 @@ function getSoKhachHang(){
             }
         }
     };
-    xhr.open("GET", "../../layout/xuly/admin-xuly/khachhangcount.php", true);
+    xhr.open("GET", "../../xuly/admin/khachhangcount.php", true);
     xhr.send();
 }
 getSoKhachHang();
@@ -48,6 +48,24 @@ function getSoDoanhThu(){
             }
         }
     };
-    xhr.open("GET", "../../layout/xuly/admin-xuly/tinhDoanhThu.php", true);
+    xhr.open("GET", "../../xuly/admin/tinhDoanhThu.php", true);
     xhr.send();
+}
+getSoDoanhThu()
+
+
+// Close modal
+let btnCloseModal = document.querySelectorAll(".modal-close");
+let modalOpen = document.querySelectorAll(".modal");
+for(let i = 0 ; i < modalOpen.length ; i++){
+    btnCloseModal[i].onclick = () => {
+        modalOpen[i].classList.remove("open");
+    };
+}
+
+
+function finish(){
+    for(let i = 0 ; i < modalOpen.length ; i++){
+        modalOpen[i].classList.remove("open");
+    }
 }

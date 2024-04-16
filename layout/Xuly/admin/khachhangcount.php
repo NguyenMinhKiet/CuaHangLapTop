@@ -1,8 +1,8 @@
-<?php include 'databaseAccess.php'?>
 <?php
+include '../DATABASE.PHP';
 
 // Tạo kết nối
-$conn = connectToDatabase();
+$conn = connect_to_database();
 
 // Truy vấn đếm số nhân viên
 $sql = "SELECT COUNT(*) AS total FROM khachhang"; 
@@ -16,6 +16,5 @@ if (mysqli_num_rows($result) > 0) {
     echo json_encode(array("total_customers" => "Không có khách hàng nào trong cơ sở dữ liệu."));
 }
 
-// Đóng kết nối
-mysqli_close($conn);
+close_database($conn);
 ?>

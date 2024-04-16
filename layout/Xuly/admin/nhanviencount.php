@@ -1,13 +1,8 @@
-<?php include 'databaseAccess.php'?>
 <?php
+include '../DATABASE.PHP';
 
 // Tạo kết nối
-$conn = connectToDatabase();
-
-// Kiểm tra kết nối
-if (!$conn) {
-    die(json_encode(array("error" => "Kết nối đến cơ sở dữ liệu thất bại: " . mysqli_connect_error())));
-}
+$conn = connect_to_database();
 
 // Truy vấn đếm số nhân viên
 $sql = "SELECT COUNT(*) AS total FROM nhanvien"; 
@@ -22,5 +17,5 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 // Đóng kết nối
-mysqli_close($conn);
+close_database($conn);
 ?>
